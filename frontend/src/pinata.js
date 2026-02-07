@@ -1,4 +1,3 @@
-import axios from "axios";
 
 const PINATA_JWT = process.env.REACT_APP_PINATA_JWT;
 
@@ -6,16 +5,21 @@ export const uploadToPinata = async (file) => {
   const formData = new FormData();
   formData.append("file", file);
 
-  const res = await axios.post(
+  const res = await fetch(
     "https://api.pinata.cloud/pinning/pinFileToIPFS",
-    formData,
     {
+      method: "POST",
       headers: {
         Authorization: `Bearer ${PINATA_JWT}`,
-        "Content-Type": "multipart/form-data",
       },
+      body: formData,
     }
   );
 
-  return res.data.IpfsHash;
+  if (!res.ok) {
+    throw new Error("Pinata upload failed");
+  }
+
+  const data = await res.json();
+  return data.IpfsHash;
 };
