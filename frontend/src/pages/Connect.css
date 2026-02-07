@@ -1,0 +1,65 @@
+/* Full screen gradient background */
+.connect-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass card */
+.connect-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Title */
+.connect-card h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 14px;
+
+  /* Gradient text */
+  background: linear-gradient(135deg, #a78bfa, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.connect-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 36px;
+
+  color: #d1d5db; /* soft light gray */
+  opacity: 0.95;
+}
+
+
+/* Button */
+.connect-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.connect-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
+}

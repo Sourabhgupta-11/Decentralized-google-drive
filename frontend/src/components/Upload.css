@@ -1,0 +1,144 @@
+.upload-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.upload-card {
+  width: 100%;
+  max-width: 420px;
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 18px;
+  padding: 26px;
+  text-align: center;
+}
+
+/* Title */
+.upload-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #e5e7eb;
+}
+
+/* ---------- FILE INPUT ---------- */
+
+/* Hide default file input */
+.upload-input {
+  display: none;
+}
+
+/* Custom file button */
+.file-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 100%;        /* important */
+  margin: 0 auto;         /* 🔥 THIS CENTERS THE ELEMENT */
+
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px dashed #374151;
+  background: #020617;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  box-sizing: border-box; /* 🔥 prevents overflow shift */
+  transition: all 0.2s ease;
+}
+
+
+.file-picker:hover {
+  border-color: #6366f1;
+  color: #e5e7eb;
+  background: #020617;
+}
+
+.file-name {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #a5b4fc;
+}
+
+/* ---------- TOGGLE CHECKBOX ---------- */
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #020617;
+  border: 1px solid #1f2937;
+}
+
+.toggle-label {
+  font-size: 14px;
+  color: #c7d2fe;
+}
+
+/* Toggle switch */
+.toggle {
+  position: relative;
+  width: 42px;
+  height: 22px;
+}
+
+.toggle input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #374151;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  top: 2px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+/* Checked state */
+.toggle input:checked + .slider {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+}
+
+.toggle input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* ---------- UPLOAD BUTTON ---------- */
+
+.upload-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.45);
+}

@@ -1,27 +1,39 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Upload from "../components/Upload";
+import "./Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="page">
-      <h1>Decentralized Drive</h1>
+<div className="home-container">
+      <div className="home-header">
+        <h2>Welcome to Decentralized Drive</h2>
+        <p>Upload, manage, and share files securely without servers.</p>
+      </div>
 
-      {/* Upload Section */}
-      <Upload />
+      <div className="home-card">
+        {/* Upload */}
+        <Upload />
 
-      <hr />
+        {/* Navigation */}
+        <div className="home-actions">
+          <button
+            className="home-btn"
+            onClick={() => navigate("/my-files")}
+          >
+            My Files
+          </button>
 
-      {/* Navigation Buttons */}
-      <button onClick={() => navigate("/my-files")}>
-        Get My Files
-      </button>
-
-      <button onClick={() => navigate("/shared-files")}>
-        Get Shared Files
-      </button>
+          <button
+            className="home-btn"
+            onClick={() => navigate("/shared-files")}
+          >
+            Shared With Me
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

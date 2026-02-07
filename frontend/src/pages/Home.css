@@ -1,0 +1,59 @@
+.home-container {
+  min-height: 100vh;
+  background: #0b1220;
+  padding: 40px;
+  color: #e5e7eb;
+}
+
+/* Header */
+.home-header {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.home-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.home-header p {
+  color: #9ca3af;
+  font-size: 15px;
+}
+
+/* Card */
+.home-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #111827;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Actions */
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.home-btn {
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  background: #1f2937;
+  color: #e5e7eb;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.home-btn:hover {
+  background: #374151;
+  transform: translateY(-2px);
+}

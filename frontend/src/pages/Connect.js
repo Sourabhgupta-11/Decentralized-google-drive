@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import "./Connect.css";
 
 const Connect = () => {
     const navigateTo=useNavigate()
@@ -19,17 +20,17 @@ const Connect = () => {
 }
 
   return (
-    <div className="page">
-      <div className="card">
-        <h1>Connect Wallet</h1>
-        <p>Please connect your MetaMask wallet to continue.</p>
-
-        <button onClick={connectWallet}>
-          Connect Wallet
+    <div className="connect-container">
+      <div className="connect-card">
+        <h1>Decentralized Drive</h1>
+        <p>
+          Securely store and share your files using blockchain and IPFS.
+        </p>
+        <button className="connect-btn" onClick={connectWallet}>
+          Connect MetaMask
         </button>
       </div>
     </div>
-
   )
 }
 
