@@ -1,0 +1,131 @@
+.myfiles-page {
+  padding: 40px;
+  min-height: 100vh;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.myfiles-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* -------- FILE GRID -------- */
+.files-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.file-card {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.file-name {
+  font-weight: 600;
+  color: #60a5fa;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+.file-date {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.file-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.file-actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.share-btn {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+}
+
+/* -------- MODAL -------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  width: 380px;
+  background: #020617;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #1f2937;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.shared-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.remove-btn {
+  background: #ef4444;
+  color: white;
+  font-size: 12px;
+  border-radius: 8px;
+  padding: 4px 10px;
+}
+
+.empty-text {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+  background: #020617;
+  color: #e5e7eb;
+  margin-bottom: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}

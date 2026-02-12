@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { uploadToPinata } from "../pinata";
-import { getContract } from "../contract";
+import { getWriteContract } from "../contract";
 import "./Upload.css"
 
 const Upload = () => {
@@ -12,7 +12,7 @@ const Upload = () => {
 
     try {
       const ipfsHash = await uploadToPinata(file);
-      const contract = await getContract();
+      const contract = await getWriteContract();
 
       const tx = await contract.uploadFile(
         file.name,
