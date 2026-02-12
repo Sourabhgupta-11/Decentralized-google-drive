@@ -2,7 +2,6 @@
 pragma solidity ^0.8.19;
 
 contract DecentralizedDrive {
-
     // ---------------- STRUCT ----------------
     struct File {
         uint256 id;
@@ -193,10 +192,15 @@ contract DecentralizedDrive {
     }
 
     function getFileSharedWith(uint256 _fileId) external view returns (address[] memory){
+        require(_fileId > 0 && _fileId <= fileCounter, "Invalid file");
         return fileSharedWith[_fileId];
     }
 
     function getSharedBy(uint256 _fileId, address _user)external view returns (address){
         return sharedBy[_fileId][_user];
+    }
+
+    function getFileId() external view returns(uint256){
+        return fileCounter;
     }
 }
