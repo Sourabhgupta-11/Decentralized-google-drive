@@ -14,7 +14,6 @@ const MyFiles = () => {
   const loadFiles = async () => {
     const contract = await getWriteContract();
     const data = await contract.getMyFiles();
-    console.log(await contract.getFileId());
     setFiles(data);
   };
 
