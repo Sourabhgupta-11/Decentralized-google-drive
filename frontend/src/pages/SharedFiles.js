@@ -10,6 +10,18 @@ const SharedFiles = () => {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const getFileIcon = (fileName) => {
+  const ext = fileName.split(".").pop().toLowerCase();
+
+  if (["png", "jpg", "jpeg", "gif", "webp"].includes(ext)) return "🖼️";
+  if (["mp4", "mov", "avi", "mkv"].includes(ext)) return "🎥";
+  if (["pdf"].includes(ext)) return "📄";
+  if (["doc", "docx"].includes(ext)) return "📝";
+  if (["xls", "xlsx"].includes(ext)) return "📊";
+  if (["zip", "rar"].includes(ext)) return "🗜️";
+  return "📁";
+  };
+
   // -------- LOAD SHARED FILES --------
   const loadSharedFiles = async () => {
     try {
@@ -102,7 +114,10 @@ const SharedFiles = () => {
                 )
               }
             >
-              📄 {file.name}
+            <span className="file-icon">
+            {getFileIcon(file.name)}
+            </span>
+            {file.name}
             </div>
 
             <div className="sharedfile-owner">
