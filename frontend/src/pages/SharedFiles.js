@@ -15,7 +15,7 @@ const SharedFiles = () => {
 
   if (["png", "jpg", "jpeg", "gif", "webp"].includes(ext)) return "🖼️";
   if (["mp4", "mov", "avi", "mkv"].includes(ext)) return "🎥";
-  if (["pdf"].includes(ext)) return "📄";
+  if (["pdf"].includes(ext)) return "📕";
   if (["doc", "docx"].includes(ext)) return "📝";
   if (["xls", "xlsx"].includes(ext)) return "📊";
   if (["zip", "rar"].includes(ext)) return "🗜️";

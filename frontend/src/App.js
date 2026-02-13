@@ -8,10 +8,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Connect />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/my-files" element={<MyFiles />} />
-        <Route path="/shared-files" element={<MySharedFiles />} />
+        <Route exact path="/" element={<Connect/>} />
+        <Route exact path="/home" element={<Home/>} />
+        <Route exact path="/my-files" element={<MyFiles/>} />
+        <Route exact path="/shared-files" element={<MySharedFiles/>} />
       </Routes>
     </Router>
   );

@@ -10,6 +10,18 @@ const MyFiles = () => {
   const [newShareAddress, setNewShareAddress] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const getFileIcon = (fileName) => {
+  const ext = fileName.split(".").pop().toLowerCase();
+
+  if (["png", "jpg", "jpeg", "gif", "webp"].includes(ext)) return "🖼️";
+  if (["mp4", "mov", "avi", "mkv"].includes(ext)) return "🎥";
+  if (["pdf"].includes(ext)) return "📕";
+  if (["doc", "docx"].includes(ext)) return "📝";
+  if (["xls", "xlsx"].includes(ext)) return "📊";
+  if (["zip", "rar"].includes(ext)) return "🗜️";
+  return "📁";
+};
+
   // -------- LOAD FILES --------
   const loadFiles = async () => {
     const contract = await getWriteContract();
@@ -109,7 +121,13 @@ const MyFiles = () => {
                 )
               }
             >
-              📄 {file.name}
+              <span className="file-icon">
+    {getFileIcon(file.name)}
+  </span>
+  <span className="file-text">
+    {file.name}
+  </span>
+
             </div>
 
             <div className="file-date">
