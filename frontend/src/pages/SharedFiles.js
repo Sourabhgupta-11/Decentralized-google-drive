@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getReadContract, getWriteContract } from "../contract";
 import "./SharedFiles.css";
+import Navbar from "../components/Navbar";
 
 const SharedFiles = () => {
   const [files, setFiles] = useState([]);
@@ -95,6 +96,8 @@ const SharedFiles = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="sharedfiles-page">
       <div className="sharedfiles-title">Files Shared With Me</div>
 
@@ -184,6 +187,7 @@ const SharedFiles = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 

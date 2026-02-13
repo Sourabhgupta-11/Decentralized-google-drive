@@ -2,11 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Upload from "../components/Upload";
 import "./Home.css";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
+    <>
+    <Navbar/>
 <div className="home-container">
       <div className="home-header">
         <h2>Welcome to Decentralized Drive</h2>
@@ -35,6 +38,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

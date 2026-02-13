@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getReadContract,getWriteContract } from "../contract.js";
 import "./MyFiles.css";
+import Navbar from "../components/Navbar.js";
 
 const MyFiles = () => {
   const [files, setFiles] = useState([]);
@@ -104,6 +105,8 @@ const MyFiles = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="myfiles-page">
       <div className="myfiles-title">My Files</div>
 
@@ -195,6 +198,7 @@ const MyFiles = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
