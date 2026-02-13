@@ -17,10 +17,8 @@ const Home = () => {
       </div>
 
       <div className="home-card">
-        {/* Upload */}
         <Upload />
 
-        {/* Navigation */}
         <div className="home-actions">
           <button
             className="home-btn"

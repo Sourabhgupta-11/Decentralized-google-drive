@@ -7,7 +7,7 @@ export const getReadContract = async () => {
   return new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
 };
 
-// 🔹 WRITE (METAMASK)
+// WRITE (METAMASK)
 export const getWriteContract = async () => {
   const provider = new ethers.BrowserProvider(window.ethereum);
   const signer = await provider.getSigner();
