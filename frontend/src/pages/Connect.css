@@ -1,65 +1,261 @@
-/* Full screen gradient background */
-.connect-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+/* ════════════════════════════════════════
+   CONNECT PAGE  (two-column split)
+   ════════════════════════════════════════ */
+
+.connect-page {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 24px;
 }
 
-/* Glass card */
-.connect-card {
+.conn-back {
+  position: fixed;
+  top: 24px;
+  left: 28px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 20;
+}
+.conn-back:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Two-column wrapper */
+.conn-wrap {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+  max-width: 900px;
   width: 100%;
-  max-width: 420px;
-  padding: 40px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-  color: #ffffff;
-  text-align: center;
 }
 
-/* Title */
-.connect-card h1 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 14px;
+/* ── LEFT BRANDING PANEL ── */
+.conn-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 32px;
+  background: rgba(8,16,36,0.6);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+}
 
-  /* Gradient text */
-  background: linear-gradient(135deg, #a78bfa, #60a5fa, #38bdf8);
+.conn-logo-badge {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.conn-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #f1f5f9, #94a3b8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  margin-bottom: 18px;
 }
 
-/* Subtitle */
-.connect-card p {
+.conn-brand-sub {
   font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 36px;
-
-  color: #d1d5db; /* soft light gray */
-  opacity: 0.95;
+  line-height: 1.8;
+  color: var(--text-dim);
+  margin-bottom: 32px;
 }
 
+.conn-perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-/* Button */
-.connect-btn {
+.conn-perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-dim);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+}
+
+.perk-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── RIGHT AUTH CARD ── */
+.conn-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 44px 40px;
+  background: rgba(8,16,36,0.88);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+}
+
+.conn-card-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* MetaMask button */
+.conn-metamask-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 20px;
   width: 100%;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 12px;
+  border-radius: 14px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  background: linear-gradient(135deg, #f97316, #ea580c);
   color: white;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.connect-btn:hover {
+.conn-metamask-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 14px 36px rgba(249,115,22,0.4);
+}
+
+.conn-metamask-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.conn-mm-icon { width: 26px; height: 26px; }
+
+.conn-mm-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Divider */
+.conn-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.conn-divider::before,
+.conn-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Demo button */
+.conn-demo-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1.5px solid var(--border-h);
+  background: rgba(56,189,248,0.05);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.conn-demo-btn:hover {
+  border-color: var(--accent);
+  background: rgba(56,189,248,0.10);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(56,189,248,0.18);
+}
+
+.conn-demo-icon { font-size: 22px; }
+
+.conn-demo-btn span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.conn-demo-btn strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.conn-demo-btn small {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.conn-demo-note {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* Network indicator */
+.conn-network-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 28px;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-muted);
+}
+
+.conn-dot-live {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 6px #34d399;
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 680px) {
+  .conn-wrap { flex-direction: column; }
+  .conn-left { padding: 32px 24px; }
+  .conn-card { padding: 32px 24px; }
 }

@@ -5,9 +5,11 @@ import "./Navbar.css";
 const Navbar = () => {
   const navigate = useNavigate();
   const wallet = localStorage.getItem("walletAddress");
+  const isDemo = localStorage.getItem("authMode") === "demo";
 
   const logout = () => {
     localStorage.removeItem("walletAddress");
+    localStorage.removeItem("authMode");
     navigate("/");
   };
 
@@ -20,17 +22,19 @@ const Navbar = () => {
     <div className="navbar">
       <div className="nav-left">
         <div className="nav-logo">Decentralized Drive</div>
+        {isDemo && <span className="demo-badge">Demo Mode · Sepolia</span>}
       </div>
 
       <div className="nav-right">
         {wallet && (
           <div className="wallet-display">
-            Connected: {shortenAddress(wallet)}
+            {isDemo ? "Demo Account: " : "Connected: "}
+            {shortenAddress(wallet)}
           </div>
         )}
 
         <button className="logout-btn" onClick={logout}>
-          Logout
+          {isDemo ? "Exit Demo" : "Logout"}
         </button>
       </div>
     </div>

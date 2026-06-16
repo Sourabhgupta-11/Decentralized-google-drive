@@ -1,112 +1,118 @@
+/* ════════════════════════════════════════
+   FILE GRID
+   ════════════════════════════════════════ */
+
 .files-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .file-card {
   background: var(--bg-card);
   backdrop-filter: blur(12px);
   border-radius: 18px;
-  padding: 10px;
-  border: 1px solid var(--border-color);
-  transition: all 0.35s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  animation: fadeInUp 0.6s ease forwards;
+  padding: 22px;
+  border: 1px solid var(--border);
+  transition: all 0.28s;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  animation: fadeInUp 0.5s ease forwards;
   opacity: 0;
 }
 
-.file-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent);
-  box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
-}
+.file-card:nth-child(1) { animation-delay: 0.04s; }
+.file-card:nth-child(2) { animation-delay: 0.09s; }
+.file-card:nth-child(3) { animation-delay: 0.14s; }
+.file-card:nth-child(4) { animation-delay: 0.19s; }
+.file-card:nth-child(5) { animation-delay: 0.24s; }
+.file-card:nth-child(n+6) { animation-delay: 0.28s; }
 
 @keyframes fadeInUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
 }
 
+.file-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-h);
+  box-shadow: 0 20px 48px rgba(56,189,248,0.14);
+}
+
+/* File name / link */
 .file-name {
-  font-size: 17px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
   font-weight: 600;
   color: var(--accent);
   cursor: pointer;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  line-height: 1.35;
   word-break: break-word;
 }
 
-.file-name:hover {
-  color: #7dd3fc;
-  text-decoration: underline;
-}
+.file-name:hover { color: #7dd3fc; text-decoration: underline; }
 
-.file-icon {
-  margin-right: 8px;
-  font-size: 18px;
-  vertical-align: middle;
-}
+.file-icon { font-size: 20px; flex-shrink: 0; }
+.file-text { flex: 1; }
 
+/* Owner row */
 .file-owner {
-  font-size: 13px;
-  color: #cbd5e1;
-  margin-bottom: 8px;
-  word-break: break-word;
-}
-
-.file-date {
-  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
   color: var(--text-muted);
-  margin-bottom: 14px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+/* Date */
+.file-date {
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Actions */
 .file-actions {
   display: flex;
-  gap: 14px;
-  align-items: center;   
+  gap: 10px;
 }
 
 .file-actions button {
   flex: 1;
-  height: 48px;
-  padding: 0;
-  margin: 0;
+  height: 40px;
   border: none;
-  outline: none;
-  border-radius: 12px;
-  font-size: 14px;
+  border-radius: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
   font-weight: 600;
-  line-height: 48px;     
-  text-align: center;
-  display: block;
-
-  box-sizing: border-box;
   cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
 }
 
-/* Share Button */
+.file-actions button:hover {
+  transform: translateY(-2px);
+}
+
 .share-btn {
-  background: linear-gradient(90deg, #2563eb, #4f46e5);
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
   color: white;
 }
 
-.share-btn:hover {
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
-}
+.share-btn:hover { box-shadow: 0 8px 20px rgba(79,70,229,0.4); }
 
-/* Delete Button */
 .delete-btn {
-  background: linear-gradient(90deg, #ef4444, #dc2626);
-  color: white;
+  background: rgba(248,113,113,0.12);
+  border: 1px solid rgba(248,113,113,0.28) !important;
+  color: #f87171;
 }
 
 .delete-btn:hover {
-  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.4);
+  background: rgba(248,113,113,0.22);
+  box-shadow: 0 8px 20px rgba(248,113,113,0.2);
 }
-
