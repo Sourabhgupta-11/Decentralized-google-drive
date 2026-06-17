@@ -28,7 +28,7 @@ A full-stack decentralized file storage and sharing platform built on **Ethereum
 
 ```bash
 # 1. Clone
-git clone https://github.com/your-username/decentralized-drive.git
+https://github.com/Sourabhgupta-11/Decentralized-google-drive
 cd decentralized-drive
 
 # 2. Install frontend deps
